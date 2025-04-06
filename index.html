@@ -22,5 +22,30 @@
       <img src="webpage-photo.png" alt="Sanpo preview" />
     </div>
   </main>
+  <section id="download-section" class="hidden-section">
+  <h2>We're using AltServer</h2>
+  <p>
+    We're still building a test version to download. It will be uploaded on AltServer.
+    You'll need AltServer downloaded on your laptop and phone to try the software.
+    Find some more instructions <a href="#" target="_blank">here</a>.
+  </p>
+</section>
 </body>
+  <script>
+  const navLinks = document.querySelectorAll("nav a");
+  const downloadSection = document.getElementById("download-section");
+
+  navLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      const text = link.textContent.trim().toLowerCase();
+      if (text === "download") {
+        e.preventDefault();
+        document.querySelectorAll(".hidden-section").forEach(sec => sec.style.display = "none");
+        downloadSection.style.display = "block";
+        window.scrollTo({ top: downloadSection.offsetTop - 20, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
 </html>
