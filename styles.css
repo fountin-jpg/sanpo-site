@@ -81,3 +81,10 @@ nav a {
   color: blue;
   text-decoration: underline;
 }
+.photo-note {
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+  margin-top: 40px;
+}
