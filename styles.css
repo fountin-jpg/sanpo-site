@@ -110,3 +110,11 @@ header p {
   font-size: 1rem;
   letter-spacing: 0.5px;
 }
+video {
+  margin-top: 20px;
+  max-width: 600px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+}
