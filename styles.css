@@ -55,7 +55,7 @@ nav a {
   max-width: 400px;
   display: flex;
   justify-content: center;
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 .photo-container img {
