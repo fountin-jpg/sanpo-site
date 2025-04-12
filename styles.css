@@ -52,9 +52,10 @@ nav a {
 }
 .photo-container {
   margin: 40px auto;
-  max-width: 400px; /* or smaller if you prefer */
+  max-width: 400px;
   display: flex;
   justify-content: center;
+  transform: translateX(10px);
 }
 
 .photo-container img {
