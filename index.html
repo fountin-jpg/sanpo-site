@@ -3,23 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>sanpo</title>
+  <title>sanpo – exploring tokyo's neighborhoods</title>
+  <meta name="description" content="Sanpo helps travelers explore Tokyo's neighborhoods with confidence: nearby local spots, everyday scenarios, quick translations and etiquette." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <h1><a href="index.html">sanpo</a></h1>
-    <p>exploring tokyo's neighborhoods</p>
+    <p class="tagline">exploring tokyo's neighborhoods</p>
     <nav>
       <a href="about.html">about</a>
-      <a href="development.html">development</a>
+      <a href="development.html">features</a>
       <a href="download.html">download</a>
     </nav>
   </header>
+
   <main>
-    <div class="photo-container">
-      <img src="webpage-photo.png" alt="Sanpo preview" />
+    <div class="wrap hero">
+      <div>
+        <p class="eyebrow">a travel companion for japan</p>
+        <h2>Travel Tokyo with confidence, and with care.</h2>
+        <p class="lede">
+          Sanpo helps you find local gems, handle everyday situations gracefully, and communicate
+          kindly, so you can explore beyond the usual hotspots and respect the neighborhoods you visit.
+        </p>
+        <div class="btn-row">
+          <a class="btn" href="download.html">get the app</a>
+          <a class="btn ghost" href="development.html">see the features</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="webpage-photo.png" alt="The Sanpo home screen with what's nearby, scenarios and manners" />
+      </div>
     </div>
+
+    <section class="wrap">
+      <p class="eyebrow">what's inside</p>
+      <h2>Everything you need, one tap away.</h2>
+      <div class="cards">
+        <a class="card" href="development.html#nearby">
+          <div class="num">01</div>
+          <h3>What's Nearby</h3>
+          <p>Quiet cafes, bookshops, shrines and sentos just steps from where you're staying.</p>
+        </a>
+        <a class="card" href="development.html#saved">
+          <div class="num">02</div>
+          <h3>Saved Places</h3>
+          <p>Save the spots you love as you explore and build a collection to revisit.</p>
+        </a>
+        <a class="card" href="development.html#scenarios">
+          <div class="num">03</div>
+          <h3>Scenarios</h3>
+          <p>A quick rundown for real situations: the konbini, the train station, the ramen shop.</p>
+        </a>
+        <a class="card" href="development.html#translations">
+          <div class="num">04</div>
+          <h3>Quick Translations</h3>
+          <p>Kind, natural phrases you can simply show to a station worker or staff member.</p>
+        </a>
+      </div>
+    </section>
+
+    <div class="band">
+      <div class="narrow">
+        <div class="stat">60 million</div>
+        <p class="eyebrow" style="color:#aaa">visitors expected to Japan each year by 2030</p>
+        <h2>More visitors means more reason to be thoughtful.</h2>
+        <p>
+          Sanpo supports travelers in having a more authentic, stress-free trip, and helps locals
+          feel understood and respected. Every neighborhood has something to offer.
+        </p>
+        <p style="margin-top:24px"><a class="btn ghost" href="about.html">our mission</a></p>
+      </div>
+    </div>
+
+    <section class="narrow" style="text-align:center">
+      <h2>Ready to take a sanpo?</h2>
+      <p>A test version is coming soon through AltStore.</p>
+      <p><a class="btn" href="download.html">how to download</a></p>
+    </section>
   </main>
+
+  <footer>© 2026 sanpo · getsanpo.com</footer>
 </body>
 </html>

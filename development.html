@@ -3,50 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download – Sanpo</title>
+  <title>Features – Sanpo</title>
+  <meta name="description" content="What's Nearby, Saved Places, Scenarios and Quick Translations: see Sanpo's features in action." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <h1><a href="index.html">sanpo</a></h1>
-    <p>exploring tokyo's neighborhoods</p>
-     <nav>
+    <p class="tagline">exploring tokyo's neighborhoods</p>
+    <nav>
       <a href="about.html">about</a>
-      <a href="development.html">development</a>
+      <a href="development.html" aria-current="page">features</a>
       <a href="download.html">download</a>
     </nav>
   </header>
-<main class="development-content">
-  <h2>What's Nearby</h2>
-  <p>
-    Discover hidden local gems just steps away — from quiet cafes and bookshops to shrines and sentos — based on where you're staying.
-  </p>
-<video controls width="100%">
-  <source src="What's Nearby - demo.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-<h2>Save Places</h2>
-<p>
-  Tap to save your favorite spots as you explore — whether it's a hidden soba shop or a peaceful sento.
-  Build your own collection of places to revisit later.
-</p>
-<video controls width="100%">
-  <source src="my location & saved places - demo.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-<section>
-  <h2><strong>Scenarios</strong></h2>
-  <p>Utilize the Scenarios feature if you find yourself in a pinch. Get the rundown on common situations you'll find yourself in — whether it's using a convenience store or navigating the public transportation system.</p>
-  <video width="100%" controls>
-    <source src="Scenarios 1 - demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
-  <section>
-  <h2><strong>Quick Translations</strong></h2>
-  <p>Use easy and quick translations. These are common, kind, and natural translations. Just simply show your device to whoever you may need to - whether it's a station worker or staff member.</p>
-  <video width="100%" controls>
-    <source src="Quick Translations - demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</section>
+
+  <main class="wrap">
+    <div class="page-title">
+      <h2>Features</h2>
+      <p>A look at what we've built so far. These are demos from the app in development.</p>
+    </div>
+
+    <article class="feature" id="nearby">
+      <div class="feature-text">
+        <div class="num">01</div>
+        <h2>What's Nearby</h2>
+        <p>
+          Discover hidden local gems just steps away, from quiet cafes and bookshops to shrines
+          and sentos, based on where you're staying.
+        </p>
+      </div>
+      <video controls playsinline preload="metadata">
+        <source src="What's%20Nearby%20-%20demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <article class="feature flip" id="saved">
+      <div class="feature-text">
+        <div class="num">02</div>
+        <h2>Saved Places</h2>
+        <p>
+          Tap to save your favorite spots as you explore, whether it's a hidden soba shop or a
+          peaceful sento. Build your own collection of places to revisit later.
+        </p>
+      </div>
+      <video controls playsinline preload="metadata">
+        <source src="my%20location%20&%20saved%20places%20-%20demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <article class="feature" id="scenarios">
+      <div class="feature-text">
+        <div class="num">03</div>
+        <h2>Scenarios</h2>
+        <p>
+          In a pinch? Get the rundown on common situations you'll find yourself in, whether
+          it's using a convenience store or navigating the public transportation system.
+        </p>
+      </div>
+      <video controls playsinline preload="metadata">
+        <source src="Scenarios%201%20-%20demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <article class="feature flip" id="translations">
+      <div class="feature-text">
+        <div class="num">04</div>
+        <h2>Quick Translations</h2>
+        <p>
+          Easy, common, kind and natural translations. Simply show your device to whoever you
+          need to, whether it's a station worker or a staff member.
+        </p>
+      </div>
+      <video controls playsinline preload="metadata">
+        <source src="Quick%20Translations%20-%20demo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </article>
+
+    <section class="narrow" style="text-align:center">
+      <h2>Want to try it?</h2>
+      <p>A test version is on the way.</p>
+      <p><a class="btn" href="download.html">how to download</a></p>
+    </section>
+  </main>
+
+  <footer>© 2026 sanpo · getsanpo.com</footer>
+</body>
+</html>
