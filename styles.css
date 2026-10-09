@@ -329,3 +329,5 @@ footer {
   section { margin: 56px 0; }
   .band { padding: 52px 0; margin: 56px 0; }
 }
+
+footer p { margin: 0 0 4px; }
