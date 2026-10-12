@@ -357,3 +357,22 @@ footer p { margin: 0 0 4px; }
 
 .hero { margin-bottom: 80px; }
 @media (max-width: 760px) { .hero { margin-bottom: 56px; } }
+
+/* two phones side by side (What's Nearby) */
+.phones {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.phones .phone {
+  flex: 1 1 0;
+  max-width: 230px;
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .phones { gap: 12px; }
+  .phones .phone { max-width: 190px; border-radius: 30px; padding: 7px; }
+  .phones .phone img { border-radius: 24px; }
+}
