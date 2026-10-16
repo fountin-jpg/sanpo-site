@@ -380,7 +380,7 @@ footer p { margin: 0 0 4px; }
 /* ---------- tappable demo ---------- */
 .demo-viewport {
   position: relative;
-  aspect-ratio: 1125 / 2436;
+  aspect-ratio: 1206 / 2622;
   overflow: hidden;
   border-radius: 32px;
   background: #fff;
@@ -521,3 +521,7 @@ footer p { margin: 0 0 4px; }
 
 .cards .card.wide { grid-column: 1 / -1; }
 @media (max-width: 760px) { .cards .card.wide { grid-column: auto; } }
+
+.demo-cta { margin: 14px auto 0; display: block; width: fit-content; }
+.demo-cta[hidden] { display: none; }
+.demo-hero-note { display: none; }
