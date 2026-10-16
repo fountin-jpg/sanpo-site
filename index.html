@@ -24,9 +24,11 @@
 
   <main>
     <div class="wrap hero">
-      <div>
+      <div class="hero-head">
         <p class="eyebrow">a travel companion for japan</p>
         <h2>Travel Tokyo with confidence, and with care.</h2>
+      </div>
+      <div class="hero-body">
         <p class="lede">
           Sanpo helps you find local gems, handle everyday situations gracefully, and communicate
           kindly, so you can explore beyond the usual hotspots and respect the neighborhoods you visit.
@@ -37,7 +39,19 @@
         </div>
       </div>
       <div class="hero-photo">
-        <div class="phone"><img src="images/app-home.webp" width="640" height="1386" alt="The Sanpo home screen with sanpo, what's nearby and scenarios" /></div>
+        <div class="phone demo" id="demo">
+          <div class="demo-viewport">
+            <img class="demo-static" src="images/demo/home.webp" width="750" height="1631" alt="The Sanpo home screen with the sanpo walk, what's nearby and scenarios buttons" />
+            <div class="demo-end" hidden>
+              <h3></h3>
+              <p></p>
+              <a class="btn" href="download.html">get the app</a>
+              <button type="button" class="demo-restart">start over</button>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption" id="demo-caption">just landed? tap the airplane</p>
+        <a class="btn demo-cta" id="demo-cta" href="download.html" hidden>get the app</a>
       </div>
     </div>
 
@@ -45,23 +59,28 @@
       <p class="eyebrow">what's inside</p>
       <h2>Everything you need, one tap away.</h2>
       <div class="cards">
-        <a class="card" href="development.html#nearby">
+        <a class="card" href="development.html#walk">
           <div class="num">01</div>
+          <h3>Sanpo Walks</h3>
+          <p>Pick short, medium or long and get a walking route of local stops, with a map and time estimate.</p>
+        </a>
+        <a class="card" href="development.html#nearby">
+          <div class="num">02</div>
           <h3>What's Nearby</h3>
           <p>Quiet cafes, bookshops, shrines and sentos just steps from where you're staying.</p>
         </a>
         <a class="card" href="development.html#scenarios">
-          <div class="num">02</div>
+          <div class="num">03</div>
           <h3>Scenarios</h3>
           <p>Step-by-step rundowns for real situations, like arriving in Japan, the konbini or the train station.</p>
         </a>
         <a class="card" href="development.html#translations">
-          <div class="num">03</div>
+          <div class="num">04</div>
           <h3>Quick Translations</h3>
           <p>Kind, natural phrases you can simply show to a station worker or staff member.</p>
         </a>
-        <a class="card" href="development.html#saved">
-          <div class="num">04</div>
+        <a class="card wide" href="development.html#saved">
+          <div class="num">05</div>
           <h3>Saved Places</h3>
           <p>Save the spots you love as you explore and build a collection to revisit.</p>
         </a>
@@ -92,5 +111,6 @@
     <p>sanpo is a product of Popsiclestickairport LLC.</p>
     <p>© 2026 Popsiclestickairport LLC. All rights reserved. · getsanpo.com</p>
   </footer>
+  <script src="demo.js" defer></script>
 </body>
 </html>
