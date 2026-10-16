@@ -24,9 +24,11 @@
 
   <main>
     <div class="wrap hero">
-      <div>
+      <div class="hero-head">
         <p class="eyebrow">a travel companion for japan</p>
         <h2>Travel Tokyo with confidence, and with care.</h2>
+      </div>
+      <div class="hero-body">
         <p class="lede">
           Sanpo helps you find local gems, handle everyday situations gracefully, and communicate
           kindly, so you can explore beyond the usual hotspots and respect the neighborhoods you visit.
@@ -37,7 +39,18 @@
         </div>
       </div>
       <div class="hero-photo">
-        <div class="phone"><img src="images/app-home.webp" width="640" height="1386" alt="The Sanpo home screen with sanpo, what's nearby and scenarios" /></div>
+        <div class="phone demo" id="demo">
+          <div class="demo-viewport">
+            <img class="demo-static" src="images/app-home.webp" width="640" height="1386" alt="The Sanpo home screen with sanpo, what's nearby and scenarios" />
+            <div class="demo-end" hidden>
+              <h3>That's the arrival guide.</h3>
+              <p>Get the app to walk through every step, from following the signs to arrivals.</p>
+              <a class="btn" href="download.html">get the app</a>
+              <button type="button" class="demo-restart">start over</button>
+            </div>
+          </div>
+        </div>
+        <p class="demo-caption" id="demo-caption">tap the glowing button to try it</p>
       </div>
     </div>
 
@@ -92,5 +105,6 @@
     <p>sanpo is a product of Popsiclestickairport LLC.</p>
     <p>© 2026 Popsiclestickairport LLC. All rights reserved. · getsanpo.com</p>
   </footer>
+  <script src="demo.js" defer></script>
 </body>
 </html>
