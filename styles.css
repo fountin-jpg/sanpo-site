@@ -518,3 +518,6 @@ footer p { margin: 0 0 4px; }
   .hero-photo { order: 0; }
   .hero .demo { max-width: 250px; }
 }
+
+.cards .card.wide { grid-column: 1 / -1; }
+@media (max-width: 760px) { .cards .card.wide { grid-column: auto; } }
