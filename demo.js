@@ -18,9 +18,8 @@
       img: 'images/app-nearby.webp',
       alt: "Sanpo What's Nearby categories",
       hot: [
-        { label: 'Back', box: [40, 123, 108, 108], to: 'home' },
-        { label: 'Search', box: [408, 493, 108, 68], to: 'results' },
-        { label: 'Saved places', box: [660, 1769, 152, 88], to: 'saved' }
+        { label: 'Back', box: [37, 142, 100, 100], to: 'home' },
+        { label: 'Saved places', box: [643, 1785, 142, 80], to: 'saved' }
       ]
     },
     results: {
