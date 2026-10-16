@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Download – Sanpo</title>
+  <title>Get the app – Sanpo</title>
   <meta name="description" content="Sanpo is coming soon to the App Store." />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -24,16 +24,22 @@
 
   <main>
     <div class="page-title">
-      <h2>Download</h2>
+      <h2>Be first to get Sanpo</h2>
       <p>Sanpo is coming soon to the App Store.</p>
     </div>
 
     <div class="narrow prose">
-      <h3 style="margin-top:0">Coming soon</h3>
-      <p>
-        We're putting the finishing touches on Sanpo and preparing it for release on the Apple
-        App Store. Check back here. This page will link straight to the app once it's live.
-      </p>
+      <form id="signup" class="signup" action="FORMSPREE_URL" method="POST" data-endpoint="FORMSPREE_URL" novalidate>
+        <label for="email">Leave your email and we'll tell you the day it's live.</label>
+        <div class="signup-row">
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required />
+          <button class="btn" type="submit">notify me</button>
+        </div>
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="signup-trap" aria-hidden="true" />
+        <input type="hidden" name="_subject" value="New Sanpo launch sign-up" />
+        <p class="signup-msg" id="signup-msg" role="status" aria-live="polite"></p>
+        <p class="signup-fine">We'll only email you about Sanpo's launch. No spam, and you can unsubscribe any time.</p>
+      </form>
 
       <div class="note">
         Sanpo is a product of Popsiclestickairport LLC.
@@ -45,5 +51,6 @@
     <p>sanpo is a product of Popsiclestickairport LLC.</p>
     <p>© 2026 Popsiclestickairport LLC. All rights reserved. · getsanpo.com</p>
   </footer>
+  <script src="signup.js" defer></script>
 </body>
 </html>
