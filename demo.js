@@ -37,6 +37,14 @@
       alt: 'Sanpo pre-trip checklist',
       hot: [{ label: 'Back', box: [37, 142, 100, 100], to: 'home' }]
     },
+    /* Haneda options. Not reachable yet: needs the airport picker screen (airplane -> HND). */
+    haneda: {
+      img: 'images/app-haneda.webp',
+      alt: 'Sanpo Haneda arrival options',
+      hot: [
+        { label: 'Back', box: [37, 142, 100, 100], to: 'home' }
+      ]
+    },
     translations: {
       img: 'images/app-translations.webp',
       alt: 'Sanpo quick translations',
