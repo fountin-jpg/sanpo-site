@@ -10,10 +10,8 @@
       img: 'images/app-home.webp',
       alt: 'Sanpo home screen',
       hot: [
-        { label: 'Arrival guide', box: [408, 1749, 108, 108], to: 'arrival', hint: true },
-        { label: 'Scenarios', box: [216, 1205, 492, 123], to: 'arrival' },
-        { label: "What's nearby", box: [216, 1045, 492, 123], to: 'nearby' },
-        { label: 'Quick translations', box: [556, 1749, 108, 108], to: 'translations' }
+        { label: "What's nearby", box: [216, 1045, 492, 123], to: 'nearby', hint: true },
+        { label: 'Checklist', box: [260, 1749, 108, 108], to: 'checklist' }
       ]
     },
     nearby: {
@@ -21,7 +19,7 @@
       alt: "Sanpo What's Nearby categories",
       hot: [
         { label: 'Back', box: [40, 123, 108, 108], to: 'home' },
-        { label: 'Search', box: [408, 493, 108, 68], to: 'results', hint: true },
+        { label: 'Search', box: [408, 493, 108, 68], to: 'results' },
         { label: 'Saved places', box: [660, 1769, 152, 88], to: 'saved' }
       ]
     },
@@ -34,6 +32,11 @@
       img: 'images/app-saved.webp',
       alt: 'Sanpo saved places',
       hot: [{ label: 'Back', box: [37, 142, 100, 100], to: 'nearby' }]
+    },
+    checklist: {
+      img: 'images/app-checklist.webp',
+      alt: 'Sanpo pre-trip checklist',
+      hot: [{ label: 'Back', box: [37, 142, 100, 100], to: 'home' }]
     },
     translations: {
       img: 'images/app-translations.webp',
