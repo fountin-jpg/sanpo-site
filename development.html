@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Features – Sanpo</title>
-  <meta name="description" content="Sanpo Walks, What's Nearby, Scenarios, Quick Translations and Saved Places: see what the app can do." />
+  <meta name="description" content="Sanpo walks, what's nearby, scenarios, quick translations and saved places: see what the app can do." />
   <link rel="icon" href="favicon.ico" sizes="any" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -12,117 +12,95 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <h1><a href="index.html">sanpo</a></h1>
-    <p class="tagline">exploring tokyo's neighborhoods</p>
-    <nav>
-      <a href="about.html">about</a>
-      <a href="development.html" aria-current="page">features</a>
-      <a href="download.html">download</a>
-    </nav>
+  <header class="top">
+    <a class="mark" href="index.html">sanpo<span lang="ja">散歩</span></a>
+    <nav><a href="about.html">about</a><a href="development.html" aria-current="page">features</a><a href="download.html">get the app</a></nav>
   </header>
 
-  <main class="wrap">
-    <div class="page-title">
-      <h2>Features</h2>
-      <p>A look at the app as it is today.</p>
+  <main class="page">
+    <div class="page-head">
+      <h2>one walk, five stops.</h2>
+      <p>This is the app as it is today. Scroll and it walks you through.</p>
     </div>
 
-    <article class="feature" id="walk">
-      <div class="feature-text">
-        <div class="num">01</div>
-        <h2>Sanpo Walks</h2>
-        <p>
-          Tell Sanpo how long you want to wander (short, medium or long) and get a walking route of
-          local stops around you, with a map, the distance and a time estimate.
-        </p>
-        <p>
-          Each stop shows what it is, how far it is, its rating, and a "local's pick" badge for
-          the places locals love. Turn on "include chains" if you want them, or step through the
-          route one stop at a time.
-        </p>
-      </div>
-      <div class="phone"><img src="images/app-walk.webp" width="640" height="1391" loading="lazy" alt="Sanpo's walking route with short, medium and long options, a map with five numbered stops, and a list of stops such as a soba shop and a Japanese tea shop" /></div>
-    </article>
+    <div class="route">
+      <div class="route-fill"></div>
+      <article class="stop-item" id="walk">
+        <span class="stop" aria-hidden="true">1</span>
+        <div class="feature">
+          <div class="feature-text">
+            <h2>sanpo walks</h2>
+            <p>Tell Sanpo how long you want to wander: short, medium or long. It builds a walking route of local stops around you, with a map, the distance and a time estimate.</p>
+            <p>Each stop shows what it is, how far away it is, its rating, and a "local's pick" badge for the places locals love. Turn on "include chains" if you want them, or step through the route one stop at a time.</p>
+          </div>
+          <div class="phone"><img src="images/app-walk.webp" width="640" height="1391" loading="lazy" alt="Sanpo's walking route with short, medium and long options, a map with five numbered stops, and a list of stops such as a soba shop and a Japanese tea shop" /></div>
+        </div>
+      </article>
+      <p class="leg">3 min · 240 m</p>
+      <article class="stop-item" id="nearby">
+        <span class="stop" aria-hidden="true">2</span>
+        <div class="feature flip">
+          <div class="feature-text">
+            <h2>what's nearby</h2>
+            <p>Hidden local gems just steps away, from quiet cafes and bookshops to shrines and sentos, based on where you're staying.</p>
+            <p class="chips"><span>food</span><span>cafes &amp; sweets</span><span>sights</span><span>shopping</span><span>everyday</span><span>drinks &amp; nightlife</span></p>
+            <p>Pick a category, or search for something like ramen. You'll see top picks with a photo of the storefront, whether it's open now, how far it is and its rating, as a list or on a map.</p>
+          </div>
+          <div class="phones">
+            <div class="phone"><img src="images/app-nearby.webp" width="640" height="1391" loading="lazy" alt="Sanpo's What's Nearby screen with categories: food, cafes and sweets, sights, shopping, everyday, and drinks and nightlife" /></div>
+            <div class="phone"><img src="images/app-nearby-results.webp" width="640" height="1391" loading="lazy" alt="Sanpo's ramen results as a list of top picks, each with a storefront photo, open now, distance and rating" /></div>
+          </div>
+        </div>
+      </article>
+      <p class="leg">2 min · 80 m</p>
+      <article class="stop-item" id="scenarios">
+        <span class="stop" aria-hidden="true">3</span>
+        <div class="feature">
+          <div class="feature-text">
+            <h2>scenarios</h2>
+            <p>In a pinch? Get the rundown on common situations, like using a convenience store or getting around on public transport.</p>
+            <p>Take <strong>Arriving in Japan</strong>: a step-by-step walkthrough, in order, from following the signs and your QR code to the booth, baggage, customs and arrivals.</p>
+          </div>
+          <div class="phone"><img src="images/app-scenarios.webp" width="640" height="1386" loading="lazy" alt="Sanpo's Arriving in Japan scenario, a step-by-step list from following the signs to arrivals" /></div>
+        </div>
+      </article>
+      <p class="leg">6 min · 430 m</p>
+      <article class="stop-item" id="translations">
+        <span class="stop" aria-hidden="true">4</span>
+        <div class="feature flip">
+          <div class="feature-text">
+            <h2>quick translations</h2>
+            <p>Easy, common, kind and natural. Choose what you want to say, then show your phone to whoever you need to, whether that's a station worker or a shop assistant.</p>
+            <p>The Japanese appears upside down at the top of the screen so it faces the person across from you.</p>
+          </div>
+          <div class="phone"><img src="images/app-translations.webp" width="640" height="1386" loading="lazy" alt="Sanpo's Quick Translations screen with phrases like Where is the bathroom and Check, please" /></div>
+        </div>
+      </article>
+      <p class="leg">4 min · 310 m</p>
+      <article class="stop-item" id="saved">
+        <span class="stop" aria-hidden="true">5</span>
+        <div class="feature">
+          <div class="feature-text">
+            <h2>saved places</h2>
+            <p>Tap to save your favorite spots as you explore, whether it's a hidden soba shop or a peaceful sento. Build a collection to revisit later.</p>
+            <p>Found a place somewhere else? Add it straight from a link.</p>
+          </div>
+          <div class="phone"><img src="images/app-saved.webp" width="640" height="1391" loading="lazy" alt="Sanpo's saved places list with an add from a link button and saved spots like Ramen Kamo to Negi and Kayaba Coffee" /></div>
+        </div>
+      </article>
+    </div>
 
-    <article class="feature flip" id="nearby">
-      <div class="feature-text">
-        <div class="num">02</div>
-        <h2>What's Nearby</h2>
-        <p>
-          Discover hidden local gems just steps away, from quiet cafes and bookshops to shrines
-          and sentos, based on where you're staying.
-        </p>
-        <p class="chips"><span>food</span><span>cafes &amp; sweets</span><span>sights</span><span>shopping</span><span>everyday</span><span>drinks &amp; nightlife</span></p>
-        <p>
-          Pick a category, or search for something like ramen, and see top picks with a photo of
-          the storefront, whether it's open now, how far it is, and its rating. Switch between a
-          list and a map.
-        </p>
-      </div>
-      <div class="phones">
-        <div class="phone"><img src="images/app-nearby.webp" width="640" height="1391" loading="lazy" alt="Sanpo's What's Nearby screen with categories: food, cafes and sweets, sights, shopping, everyday, and drinks and nightlife" /></div>
-        <div class="phone"><img src="images/app-nearby-results.webp" width="640" height="1391" loading="lazy" alt="Sanpo's ramen results as a list of top picks, each with a storefront photo, open now, distance and rating" /></div>
-      </div>
-    </article>
-
-    <article class="feature" id="scenarios">
-      <div class="feature-text">
-        <div class="num">03</div>
-        <h2>Scenarios</h2>
-        <p>
-          In a pinch? Get the rundown on common situations you'll find yourself in, whether
-          it's using a convenience store or navigating the public transportation system.
-        </p>
-        <p>
-          Take <strong>Arriving in Japan</strong>: a step-by-step walkthrough, in order, from
-          following the signs and your QR code to the booth, baggage, customs and arrivals.
-        </p>
-      </div>
-      <div class="phone"><img src="images/app-scenarios.webp" width="640" height="1386" loading="lazy" alt="Sanpo's Arriving in Japan scenario, a step-by-step list from following the signs to arrivals" /></div>
-    </article>
-
-    <article class="feature flip" id="translations">
-      <div class="feature-text">
-        <div class="num">04</div>
-        <h2>Quick Translations</h2>
-        <p>
-          Easy, common, kind and natural translations. Choose what you want to say, then simply
-          show your device to whoever you need to, whether it's a station worker or a staff member.
-        </p>
-        <p>
-          The Japanese appears upside down at the top of the screen so it faces the person across
-          from you.
-        </p>
-      </div>
-      <div class="phone"><img src="images/app-translations.webp" width="640" height="1386" loading="lazy" alt="Sanpo's Quick Translations screen with phrases like Where is the bathroom and Check, please" /></div>
-    </article>
-
-    <article class="feature" id="saved">
-      <div class="feature-text">
-        <div class="num">05</div>
-        <h2>Saved Places</h2>
-        <p>
-          Tap to save your favorite spots as you explore, whether it's a hidden soba shop or a
-          peaceful sento. Build your own collection of places to revisit later.
-        </p>
-        <p>
-          Found a place somewhere else? Add it straight from a link.
-        </p>
-      </div>
-      <div class="phone"><img src="images/app-saved.webp" width="640" height="1391" loading="lazy" alt="Sanpo's saved places list with an add from a link button and saved spots like Ramen Kamo to Negi and Kayaba Coffee" /></div>
-    </article>
-
-    <section class="narrow" style="text-align:center">
-      <h2>Want to try it?</h2>
+    <section class="closing">
       <p>Sanpo is coming soon to the App Store.</p>
-      <p><a class="btn" href="download.html">see download info</a></p>
+      <a class="btn" href="download.html">get the app</a>
     </section>
   </main>
 
-  <footer>
+  <footer class="foot">
     <p>sanpo is a product of Popsiclestickairport LLC.</p>
     <p>© 2026 Popsiclestickairport LLC. All rights reserved. · getsanpo.com</p>
+    <p id="tokyo-time"></p>
   </footer>
+  <script src="site.js" defer></script>
 </body>
 </html>
