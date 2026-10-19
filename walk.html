@@ -4,19 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A walk – Sanpo</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <h1>sanpo</h1>
-    <p>someone sent you a walk</p>
+  <header class="site-header">
+    <h1><a href="index.html">sanpo</a></h1>
+    <p class="tagline">someone sent you a walk</p>
+    <nav>
+      <a href="about.html">about</a>
+      <a href="development.html">features</a>
+      <a href="download.html">download</a>
+    </nav>
   </header>
 
-  <main class="download-content">
-    <h2>Opening in sanpo…</h2>
-    <p>If nothing happens, you may not have sanpo yet. <a href="download.html">Get it here</a>, then tap this link again.</p>
-    <p><a id="open" href="#">Open in sanpo</a></p>
+  <main>
+    <div class="page-title">
+      <h2 id="walk-title">Opening in sanpo…</h2>
+      <p id="walk-sub">If nothing happens, you may not have sanpo yet.</p>
+    </div>
+
+    <div class="narrow prose" style="text-align:center">
+      <p><a class="btn" id="open" href="#" style="text-decoration:none">Open in sanpo</a></p>
+      <p><a class="btn ghost" href="download.html" style="text-decoration:none">Get sanpo</a></p>
+      <p style="font-family:var(--sans);font-size:0.8rem;color:var(--muted)">Don't have it yet? Get it, then tap this link again.</p>
+    </div>
   </main>
+
+  <footer>
+    <p>sanpo is a product of Popsiclestickairport LLC.</p>
+    <p>© 2026 Popsiclestickairport LLC. All rights reserved. · getsanpo.com</p>
+  </footer>
 
   <script>
     // The walk travels in the part of the link after the #, which is never sent to a server.
@@ -26,7 +48,9 @@
       document.getElementById("open").href = target;
       location.href = target;
     } else {
-      document.querySelector("h2").textContent = "This link has no walk in it";
+      document.getElementById("walk-title").textContent = "This link has no walk in it";
+      document.getElementById("walk-sub").textContent = "Ask whoever sent it to share the walk again.";
+      document.getElementById("open").style.display = "none";
     }
   </script>
 </body>
