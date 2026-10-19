@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A walk – Sanpo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>sanpo</h1>
+    <p>someone sent you a walk</p>
+  </header>
+
+  <main class="download-content">
+    <h2>Opening in sanpo…</h2>
+    <p>If nothing happens, you may not have sanpo yet. <a href="download.html">Get it here</a>, then tap this link again.</p>
+    <p><a id="open" href="#">Open in sanpo</a></p>
+  </main>
+
+  <script>
+    // The walk travels in the part of the link after the #, which is never sent to a server.
+    var walk = location.hash.slice(1);
+    if (walk) {
+      var target = "sanpo://w?d=" + walk;
+      document.getElementById("open").href = target;
+      location.href = target;
+    } else {
+      document.querySelector("h2").textContent = "This link has no walk in it";
+    }
+  </script>
+</body>
+</html>
