@@ -308,6 +308,18 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
   pointer-events: none;
 }
 
+/* the main suggestion gets a steady glow and a second, offset ring */
+.demo-hot.primary { box-shadow: 0 0 0 5px rgba(10, 132, 255, 0.22); }
+.demo-hot.primary::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 20px;
+  border: 3px solid #0a84ff;
+  animation: demo-pulse 1.6s ease-out 0.8s infinite;
+  pointer-events: none;
+}
+
 @keyframes demo-pulse {
   0% { opacity: 0.9; transform: scale(0.96); }
   100% { opacity: 0; transform: scale(1.12); }
@@ -351,7 +363,7 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
 
 @media (prefers-reduced-motion: reduce) {
   .demo-screen, .demo-end, .stop { transition: none; }
-  .demo-hot.hint::after { animation: none; opacity: 0.8; }
+  .demo-hot.hint::after, .demo-hot.primary::before { animation: none; opacity: 0.8; }
 }
 
 /* ---------- mobile ---------- */
