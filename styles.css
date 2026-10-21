@@ -29,7 +29,7 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
 /* ---------- top bar ---------- */
 .top {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 16px;
   max-width: 1080px;
@@ -38,17 +38,16 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
 }
 
 .mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   font-size: 1.9rem;
   letter-spacing: 0;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.mark span {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-left: 10px;
-}
+.mark img { width: 40px; height: 40px; display: block; }
 
 .top nav { display: flex; gap: 22px; font-family: var(--sans); font-size: 0.95rem; flex-wrap: wrap; justify-content: flex-end; }
 .top nav a { text-decoration: none; padding: 4px 0; border-bottom: 1.5px solid transparent; }
@@ -360,7 +359,8 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
   :root { --gutter: 20px; }
   body { font-size: 1.05rem; }
   .top { padding-top: 22px; }
-  .mark { font-size: 1.6rem; }
+  .mark { font-size: 1.6rem; gap: 10px; }
+  .mark img { width: 34px; height: 34px; }
   .top nav { gap: 16px; font-size: 0.9rem; }
 
   .page-head { margin: 48px 0 28px; }
