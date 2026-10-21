@@ -13,10 +13,10 @@
 
   var SCREENS = {
     home: { alt: 'Sanpo home screen', hot: [
-      h('Arrival guide (airplane)', [357, 2147, 132, 131], 'airport', true),
-      h('Sanpo walk', [303, 1105, 600, 149], 'party'),
-      h('Talk (chat bubbles)', [897, 2147, 132, 131], 'talk'),
-      h('Before you go (checklist)', [177, 2147, 132, 131], 'checklist')
+      { label: 'Sanpo walk', box: [303, 1105, 600, 149], to: 'party', hint: true, primary: true },
+      { label: 'Arrival guide (airplane)', box: [357, 2147, 132, 131], to: 'airport', hint: true },
+      { label: 'Talk (chat bubbles)', box: [897, 2147, 132, 131], to: 'talk' },
+      { label: 'Before you go (checklist)', box: [177, 2147, 132, 131], to: 'checklist' }
     ] },
     checklist: { alt: 'Before you go checklist', hot: [h('Back', BACK, 'home')] },
 
@@ -172,7 +172,7 @@
     s.hot.forEach(function (hs) {
       var b = document.createElement('button');
       b.type = 'button';
-      b.className = 'demo-hot' + (hs.hint ? ' hint' : '');
+      b.className = 'demo-hot' + (hs.hint ? ' hint' : '') + (hs.primary ? ' primary' : '');
       b.setAttribute('aria-label', hs.label);
       b.tabIndex = -1;
       b.style.left = pct(hs.box[0], W); b.style.top = pct(hs.box[1], H);
@@ -219,7 +219,7 @@
     s.hot.forEach(function (hs) {
       if (hs.to.indexOf('end:') !== 0) ensure(resolve(hs.to));
     });
-    if (caption) caption.textContent = id === 'home' ? 'just landed? tap the airplane' : 'tap the glowing button, or explore';
+    if (caption) caption.textContent = id === 'home' ? 'tap sanpo to take a walk, or the airplane if you just landed' : 'tap the glowing button, or explore';
     if (cta) cta.hidden = moves < 4;
   }
 
