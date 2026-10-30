@@ -407,3 +407,12 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
   .phones .phone img { border-radius: 24px; }
   .demo-viewport { border-radius: 27px; }
 }
+
+/* ---------- the small things ---------- */
+.more { margin: 24px 0 72px; padding-top: 56px; border-top: 1.5px solid var(--ink); }
+.more h2 { font-size: clamp(2rem, 4.4vw, 3rem); margin-bottom: 32px; }
+.more-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 56px; }
+.more h3 { font-size: 1.4rem; margin-bottom: 10px; }
+.more p { color: #222; font-size: 1.05rem; }
+.more .source { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); margin-top: 36px; }
+@media (max-width: 760px) { .more-grid { grid-template-columns: 1fr; gap: 28px; } .more { padding-top: 40px; margin-bottom: 56px; } }
