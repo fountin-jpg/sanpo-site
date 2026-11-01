@@ -59,9 +59,12 @@
     ] },
     w2: { alt: 'Customize: how many are walking, hungry, and what you like', hot: [
       h('Back', BACK, 'home'),
-      h('Lunch', [614, 1200, 503, 115], 'w3', true)
+      h('Lunch', [614, 1200, 503, 115], 'w2b', true)
     ] },
-    w3: { alt: 'Customize, scrolled: what to leave out, and update my walk', hot: [
+    w2b: { alt: 'Customize with lunch selected', down: 'w3', downHint: true, hot: [
+      h('Back', BACK, 'home')
+    ] },
+    w3: { alt: 'Customize, scrolled: what to leave out, and update my walk', up: 'w2b', hot: [
       h('Back', BACK, 'home'),
       h('Update my walk', [49, 1985, 1105, 150], 'w4', true)
     ] },
