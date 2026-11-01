@@ -13,7 +13,7 @@
 
   var SCREENS = {
     home: { alt: 'Sanpo home screen', hot: [
-      { label: 'Sanpo walk', box: [303, 1105, 600, 149], to: 'party', hint: true, primary: true },
+      { label: 'Sanpo walk', box: [303, 1214, 600, 150], to: 'party', hint: true, primary: true },
       { label: 'Arrival guide (airplane)', box: [357, 2147, 132, 131], to: 'airport', hint: true },
       { label: 'Talk (chat bubbles)', box: [897, 2147, 132, 131], to: 'talk' },
       { label: 'Before you go (checklist)', box: [177, 2147, 132, 131], to: 'checklist' }
