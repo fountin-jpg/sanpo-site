@@ -2,7 +2,7 @@
 
    Each screen is an image in /images/demo plus a list of hotspots.
    Hotspot boxes are [x, y, width, height] in pixels of the 1206 x 2622
-   screenshots. `to` is a screen id, '@options' (the airport options screen
+   screenshots (iPhone 17 Pro). `to` is a screen id, '@options' (the airport options screen
    for whichever airport was picked) or 'end:<kind>' (the sign-up card).
    `hint: true` marks the suggested next tap (it glows). */
 (function () {
@@ -11,12 +11,15 @@
 
   function h(label, box, to, hint) { return { label: label, box: box, to: to, hint: !!hint }; }
 
+  /* `down` / `up`: the same page scrolled; shown as small arrow buttons. */
   var SCREENS = {
     home: { alt: 'Sanpo home screen', hot: [
-      { label: 'Sanpo walk', box: [303, 1214, 600, 150], to: 'party', hint: true, primary: true },
+      { label: 'Sanpo walk', box: [303, 1214, 600, 150], to: 'w1', hint: true, primary: true },
       { label: 'Arrival guide (airplane)', box: [357, 2147, 132, 131], to: 'airport', hint: true },
-      { label: 'Talk (chat bubbles)', box: [897, 2147, 132, 131], to: 'talk' },
-      { label: 'Before you go (checklist)', box: [177, 2147, 132, 131], to: 'checklist' }
+      h("What's nearby", [303, 1410, 600, 148], 'nearby'),
+      h('Scenarios', [303, 1604, 600, 149], 'guides'),
+      h('Talk (chat bubbles)', [897, 2147, 132, 131], 'talk'),
+      h('Before you go (checklist)', [177, 2147, 132, 131], 'checklist')
     ] },
     checklist: { alt: 'Before you go checklist', hot: [h('Back', BACK, 'home')] },
 
@@ -50,84 +53,112 @@
     uber: { alt: 'Airport to Shinjuku by uber', hot: [h('Back', BACK, 'shinjuku')] },
 
     /* ---- sanpo walk ---- */
-    party: { alt: 'Walk party size: 1 person', hot: [
+    w1: { alt: 'The first walk: short, medium and long, include chains, customize, four stops on a map', hot: [
       h('Back', BACK, 'home'),
-      h('One more person', [815, 1199, 66, 66], 'party2'),
-      h('Sanpo', [303, 1342, 600, 149], 'hunger', true)
+      h('Customize', [47, 731, 1111, 114], 'w2', true)
     ] },
-    party2: { alt: 'Walk party size: 2 people', hot: [
+    w2: { alt: 'Customize: how many are walking, hungry, and what you like', hot: [
       h('Back', BACK, 'home'),
-      h('One fewer person', [324, 1199, 66, 66], 'party'),
-      h('Sanpo', [303, 1342, 600, 149], 'hunger', true)
+      h('Lunch', [614, 1200, 503, 115], 'w3', true)
     ] },
-    hunger: { alt: 'How hungry are you?', hot: [
-      h('Back', BACK, 'party'),
-      h('Lunch', [303, 1021, 600, 149], 'prefs', true)
-    ] },
-    prefs: { alt: 'Walk preferences', hot: [
-      h('Back', BACK, 'hunger'),
-      h('Sanpo', [303, 2058, 600, 165], 'route', true)
-    ] },
-    route: { alt: 'Medium walk route with map and stops', hot: [
+    w3: { alt: 'Customize, scrolled: what to leave out, and update my walk', hot: [
       h('Back', BACK, 'home'),
-      h('Short', [47, 396, 357, 115], 'route-short'),
-      h('Long', [802, 396, 358, 115], 'route-long'),
-      h('Step through', [81, 839, 404, 100], 'step1', true)
+      h('Update my walk', [49, 1985, 1105, 150], 'w4', true)
     ] },
-    'route-short': { alt: 'Short walk route', hot: [
+    w4: { alt: 'The lunch walk: four stops on a map with short, medium and long', down: 'w5', hot: [
       h('Back', BACK, 'home'),
-      h('Medium', [425, 396, 358, 115], 'route'),
-      h('Long', [802, 396, 358, 115], 'route-long')
+      h('Step through', [81, 1040, 410, 110], 'step1', true)
     ] },
-    'route-long': { alt: 'Long walk route', hot: [
-      h('Back', BACK, 'home'),
-      h('Short', [47, 396, 357, 115], 'route-short'),
-      h('Medium', [425, 396, 358, 115], 'route')
+    w5: { alt: 'The lunch walk stops, with a soba restaurant as the main stop', up: 'w4', hot: [
+      h('Back', BACK, 'home')
     ] },
     step1: { alt: 'Stepping through the walk', hot: [
-      h('Whole walk', [207, 381, 315, 102], 'route'),
-      h('Previous stop', [81, 381, 102, 102], 'route'),
+      h('Whole walk', [207, 381, 315, 102], 'w4'),
+      h('Previous stop', [81, 381, 102, 102], 'w4'),
       h('Next stop', [545, 381, 102, 102], 'step2', true)
     ] },
     step2: { alt: 'Walking to stop 1', hot: [
-      h('Whole walk', [207, 381, 315, 102], 'route'),
+      h('Whole walk', [207, 381, 315, 102], 'w4'),
       h('Previous stop', [81, 381, 102, 102], 'step1'),
       h('Next stop', [545, 381, 102, 102], 'step3', true)
     ] },
     step3: { alt: 'Walking to stop 2', hot: [
-      h('Whole walk', [207, 381, 315, 102], 'route'),
+      h('Whole walk', [207, 381, 315, 102], 'w4'),
       h('Previous stop', [81, 381, 102, 102], 'step2'),
       h('Next stop', [545, 381, 102, 102], 'end:walk', true)
     ] },
 
-    /* ---- talk ---- */
-    talk: { alt: 'Talk: conversation categories', hot: [
+    /* ---- what's nearby: search, results, a place ---- */
+    nearby: { alt: "What's nearby: find something for me, search, and kinds of place", hot: [
       h('Back', BACK, 'home'),
-      h('Trains', [60, 372, 524, 180], 'trains', true),
-      h('Everyday', [621, 1236, 524, 180], 'everyday')
+      h('Find something for me', [212, 520, 780, 159], 'around'),
+      h('Search', [537, 886, 130, 81], 'search', true)
     ] },
-    trains: { alt: 'Trains: phrases to say', hot: [
+    search: { alt: 'Typing ram: the search suggests ramen with ラーメン beside it', hot: [
+      h('Ramen', [40, 455, 1126, 115], 'results', true),
+      h('Search', [905, 2250, 285, 140], 'results')
+    ] },
+    results: { alt: 'Ramen results, photos off: open now, distance and rating', hot: [
+      h('Close', [1050, 255, 100, 100], 'nearby'),
+      h('Torisoba Zagin', [45, 712, 1116, 382], 'place1', true)
+    ] },
+    around: { alt: 'Find something for me: the best open places around you, photos off', hot: [
+      h('Close', [1050, 255, 100, 100], 'nearby')
+    ] },
+    place1: { alt: 'A place page: open in maps, been here, show photos, and good to know with a topic chip', down: 'place2', downHint: true, hot: [
+      h('Close', [1020, 255, 130, 100], 'results')
+    ] },
+    place2: { alt: "The place page's review summary, labelled Summarized with Gemini", up: 'place1', hot: [
+      h('Close', [1020, 240, 130, 120], 'results'),
+      h('Menu words', [345, 868, 516, 100], 'place3', true)
+    ] },
+    place3: { alt: 'Menu words in Japanese with romaji and English', up: 'place2', down: 'place4', hot: [
+      h('Close', [1020, 240, 130, 120], 'results')
+    ] },
+    place4: { alt: 'Seating notes and a phrase to say how many are in your group', up: 'place3', hot: [
+      h('Close', [1020, 240, 130, 120], 'results')
+    ] },
+
+    /* ---- guides and phrase cards ---- */
+    guides: { alt: 'Guides: food, everyday, cafes and sweets, sights, shopping, drinks and nightlife', hot: [
+      h('Back', BACK, 'home'),
+      h('Food', [303, 774, 598, 148], 'guides-food', true)
+    ] },
+    'guides-food': { alt: 'Food guides', hot: [
+      h('Back', BACK, 'guides'),
+      h('Japanese food', [303, 930, 598, 148], 'guides-jp', true)
+    ] },
+    'guides-jp': { alt: 'Japanese food guides: ramen, teishoku, gyudon, tonkatsu, sushi, yakitori and more', hot: [
+      h('Back', BACK, 'guides-food'),
+      h('Ramen', [60, 758, 524, 150], 'guide-ramen', true)
+    ] },
+    'guide-ramen': { alt: 'The ramen guide, with a phrase card showing romaji, Japanese and English', down: 'guide-ramen2', hot: [
+      h('Back', BACK, 'guides-jp'),
+      h('Phrase card: osusume wa nan desu ka?', [48, 1489, 1109, 205], 'card1', true)
+    ] },
+    'guide-ramen2': { alt: 'The ramen guide steps: at the ticket machine, with a phrase card for how many', up: 'guide-ramen', hot: [
+      h('Back', BACK, 'guides-jp'),
+      h('Phrase card: hitori desu', [90, 720, 1025, 260], 'card2')
+    ] },
+    card1: { alt: 'A phrase card filling the screen in large Japanese: what do you recommend?', hot: [
+      h('Back', [0, 0, 1206, 2622], 'guide-ramen')
+    ] },
+    card2: { alt: 'A phrase card filling the screen in large Japanese: just one', hot: [
+      h('Back', [0, 0, 1206, 2622], 'guide-ramen2')
+    ] },
+
+    /* ---- talk ---- */
+    talk: { alt: 'Talk: conversation topics', hot: [
+      h('Back', BACK, 'home'),
+      h('Pharmacy', [621, 1452, 524, 180], 'talk2', true)
+    ] },
+    talk2: { alt: 'Pharmacy: choose what to say', hot: [
       h('Back', BACK, 'talk'),
-      h('More', [619, 2197, 545, 125], 'trains-more', true)
+      h('A cold', [619, 1659, 545, 146], 'talk3', true)
     ] },
-    'trains-more': { alt: 'Trains: more phrases', hot: [
-      h('Back', BACK, 'talk'),
-      h('How many stops to...?', [42, 1753, 545, 166], 'picker', true)
-    ] },
-    picker: { alt: 'Where to? Station picker', hot: [
-      h('Done', [946, 186, 211, 131], 'trains-more'),
-      h('Tokyo', [49, 924, 543, 149], 'trains-after', true),
-      h('Shinjuku', [615, 924, 543, 149], 'trains-after')
-    ] },
-    'trains-after': { alt: 'The phrase shown upside down to the station staff', hot: [
-      h('Back', BACK, 'talk'),
-      h('Choose a place', [363, 2365, 481, 117], 'picker')
-    ] },
-    everyday: { alt: 'Everyday: phrases to say', hot: [
-      h('Back', BACK, 'talk'),
-      h('Check, please', [42, 2011, 545, 146], 'everyday-after', true)
-    ] },
-    'everyday-after': { alt: "'Check, please' shown upside down to the staff", hot: [h('Back', BACK, 'talk')] }
+    talk3: { alt: 'The staff side shows the Japanese upside down; you see "please wait"', hot: [
+      h('Back', BACK, 'talk')
+    ] }
   };
 
   for (var n = 1; n <= 10; n++) {
@@ -180,6 +211,22 @@
       b.addEventListener('click', function () { go(hs.to); });
       wrap.appendChild(b);
     });
+    if (s.up || s.down) {
+      var bar = document.createElement('div');
+      bar.className = 'demo-scrolls';
+      [['up', s.up], ['down', s.down]].forEach(function (d) {
+        if (!d[1]) return;
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'demo-hot demo-scroll ' + d[0] + (d[0] === 'down' && s.downHint ? ' hint' : '');
+        b.setAttribute('aria-label', d[0] === 'down' ? 'Scroll down' : 'Scroll up');
+        b.tabIndex = -1;
+        b.textContent = d[0] === 'down' ? '↓' : '↑';
+        b.addEventListener('click', function () { go(d[1]); });
+        bar.appendChild(b);
+      });
+      wrap.appendChild(bar);
+    }
     viewport.insertBefore(wrap, endcard);
     els[id] = wrap;
     return wrap;
@@ -219,6 +266,8 @@
     s.hot.forEach(function (hs) {
       if (hs.to.indexOf('end:') !== 0) ensure(resolve(hs.to));
     });
+    if (s.up) ensure(s.up);
+    if (s.down) ensure(s.down);
     if (caption) caption.textContent = id === 'home' ? 'tap sanpo to take a walk, or the airplane if you just landed' : 'tap the glowing button, or explore';
     if (cta) cta.hidden = moves < 4;
   }
