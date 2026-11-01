@@ -422,3 +422,44 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
 .more .phones.mini .phone { flex: 0 1 190px; max-width: 190px; border-radius: 30px; padding: 6px; }
 .more .phones.mini .phone img { border-radius: 24px; }
 @media (max-width: 760px) { .more .phones.mini .phone { flex-basis: 160px; max-width: 160px; } }
+
+/* arrow buttons for screens that are the same page scrolled */
+.demo-scrolls {
+  position: absolute;
+  left: 0; right: 0; bottom: 2.4%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+  z-index: 2;
+}
+.demo-hot.demo-scroll {
+  position: relative;
+  pointer-events: auto;
+  width: 11.5%;
+  aspect-ratio: 1;
+  min-width: 30px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font: 700 1rem/1 var(--sans);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0.9;
+}
+.demo-hot.demo-scroll:hover { background: #000; opacity: 1; }
+.demo-scroll.hint::after { border-radius: 50%; inset: -5px; }
+
+/* "also inside": a few more things the app does */
+.gallery { margin: 0 0 96px; }
+.gallery h2 { font-size: clamp(2rem, 4.4vw, 3rem); margin-bottom: 28px; }
+.gallery-strip { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 32px; }
+.gallery figure { margin: 0; }
+.gallery .phone { max-width: 230px; margin: 0 0 14px; }
+.gallery figcaption { font-size: 1rem; color: #222; max-width: 20em; }
+.gallery figcaption b { font-weight: normal; display: block; font-size: 1.25rem; margin-bottom: 4px; }
+@media (max-width: 760px) {
+  .gallery { margin-bottom: 64px; }
+  .gallery-strip { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; margin: 0 calc(var(--gutter) * -1); padding-left: var(--gutter); padding-right: var(--gutter); }
+  .gallery figure { flex: 0 0 210px; scroll-snap-align: start; }
+  .gallery .phone { max-width: 210px; }
+}
