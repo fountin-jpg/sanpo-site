@@ -66,7 +66,7 @@
     ] },
     w3: { alt: 'Customize, scrolled: what to leave out, and update my walk', up: 'w2b', hot: [
       h('Back', BACK, 'home'),
-      h('Update my walk', [49, 1985, 1105, 150], 'w4', true)
+      h('Update my walk', [48, 1379, 1109, 142], 'w4', true)
     ] },
     w4: { alt: 'The lunch walk: four stops on a map with short, medium and long', down: 'w5', hot: [
       h('Back', BACK, 'home'),
