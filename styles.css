@@ -463,3 +463,12 @@ h1, h2, h3 { font-weight: normal; margin: 0; line-height: 1.12; letter-spacing: 
   .gallery figure { flex: 0 0 210px; scroll-snap-align: start; }
   .gallery .phone { max-width: 210px; }
 }
+
+/* privacy page: short, one tight column */
+.page-head.tight { margin: 36px 0 16px; }
+.page-head.tight h2 { font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 4px; }
+.page-head.tight p { font-family: var(--sans); font-size: 0.85rem; color: var(--muted); }
+.policy p { font-size: 0.98rem; line-height: 1.5; margin: 0 0 0.7em; }
+.policy .todo { background: #fff3b0; padding: 0 4px; border-radius: 4px; font-family: var(--sans); font-size: 0.9em; }
+.foot a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 760px) { .page-head.tight { margin: 22px 0 10px; } .policy p { font-size: 0.93rem; margin-bottom: 0.55em; } }
